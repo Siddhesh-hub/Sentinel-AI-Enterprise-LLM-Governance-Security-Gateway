@@ -1,6 +1,6 @@
-# Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway
+# "Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway"
 
-AiGuard is a small but practical security-focused GenAI project that defends an operational assistant from prompt injection attempts before allowing it to generate CloudOps troubleshooting guidance. It combines lightweight pre-model checks with structured Gemini calls so the system can reject unsafe prompts quickly and still produce useful, machine-validated answers for safe requests.
+"Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway" is a small but practical security-focused GenAI project that defends an operational assistant from prompt injection attempts before allowing it to generate CloudOps troubleshooting guidance. It combines lightweight pre-model checks with structured Gemini calls so the system can reject unsafe prompts quickly and still produce useful, machine-validated answers for safe requests.
 
 The project is designed as a learning-friendly prototype with production-minded ideas. It demonstrates how to put an LLM behind a security pipeline instead of exposing the model directly to user input.
 
@@ -10,7 +10,7 @@ The project is designed as a learning-friendly prototype with production-minded 
 
 Most AI assistants fail not because the underlying model is weak, but because the application accepts user prompts too trustingly. If an assistant is meant to help with infrastructure, support, or operations, a malicious prompt can try to reveal internal rules, bypass safeguards, or turn the model into a tool for harmful actions.
 
-AiGuard addresses that problem by introducing multiple checkpoints before a final answer is produced:
+"Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway" addresses that problem by introducing multiple checkpoints before a final answer is produced:
 
 - a cheap regex layer for obvious attack patterns
 - an LLM-as-a-judge layer for more subtle adversarial intent
@@ -27,7 +27,7 @@ Prompt injection is one of the most important practical problems in applied AI s
 - give unsafe operational guidance
 - produce inconsistent outputs that are hard to monitor
 
-AiGuard shows how to reduce that risk with simple application-side controls. It is especially useful as a reference project for students, builders, and teams exploring safe AI design patterns.
+"Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway" shows how to reduce that risk with simple application-side controls. It is especially useful as a reference project for students, builders, and teams exploring safe AI design patterns.
 
 ## Pros
 
@@ -49,9 +49,9 @@ AiGuard shows how to reduce that risk with simple application-side controls. It 
 - Audit logging for blocked and allowed requests
 - Environment-based configuration using `.env`
 
-## How AiGuard Works
+## How "Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway" Works
 
-AiGuard processes a request in three stages:
+"Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway" processes a request in three stages:
 
 1. Regex screening
    Obvious prompt injection phrases are blocked immediately.
@@ -68,7 +68,7 @@ AiGuard processes a request in three stages:
 ## Project Structure
 
 ```text
-AiGuard/
+"Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway"/
 |-- .env
 |-- requirements.txt
 |-- README.md
@@ -119,7 +119,7 @@ These difficulties are normal and are part of why this project is useful as a le
 
 ## Learnings From the Project
 
-AiGuard teaches several important engineering ideas:
+"Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway" teaches several important engineering ideas:
 
 - guardrails should exist outside the model, not only inside the prompt
 - cheap deterministic filters are valuable before expensive AI calls
@@ -133,7 +133,7 @@ AiGuard teaches several important engineering ideas:
 
 ```bash
 git clone https://github.com/<your-username>/Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway.git
-cd Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway
+cd "Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway"
 ```
 
 ### 2. Create and activate a virtual environment
@@ -185,7 +185,7 @@ logs/audit.log
 
 ## Example Use Cases
 
-AiGuard can be adapted to several practical scenarios:
+"Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway" can be adapted to several practical scenarios:
 
 - protecting AI support bots from prompt injection
 - screening internal DevOps assistants before they answer operational questions
@@ -261,7 +261,7 @@ Shows whether the request was:
 
 ## Concepts Used In This Project
 
-The companion learning notes live in [learning/README.md](./learning/README.md). That folder explains the main ideas used in AiGuard, including:
+The companion learning notes live in [learning/README.md](./learning/README.md). That folder explains the main ideas used in "Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway", including:
 
 - prompt injection
 - layered defenses
@@ -292,4 +292,4 @@ python-dotenv
 
 ## Conclusion
 
-AiGuard is a compact example of how to build safer LLM applications by combining deterministic checks, model-based classification, structured outputs, and logging. It is small enough to study quickly, but rich enough to demonstrate real-world concerns that matter in AI product development.
+"Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway" is a compact example of how to build safer LLM applications by combining deterministic checks, model-based classification, structured outputs, and logging. It is small enough to study quickly, but rich enough to demonstrate real-world concerns that matter in AI product development.
