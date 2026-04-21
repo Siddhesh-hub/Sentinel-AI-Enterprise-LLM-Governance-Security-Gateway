@@ -1,6 +1,6 @@
 # AiGuard
 
-AiGuard is a small but practical security-focused GenAI project that defends an operational assistant from prompt injection attempts before allowing it to generate CloudOps troubleshooting guidance. It combines lightweight local checks with structured Gemini calls so the system can reject unsafe prompts quickly and still produce useful, machine-validated answers for safe requests.
+AiGuard is a small but practical security-focused GenAI project that defends an operational assistant from prompt injection attempts before allowing it to generate CloudOps troubleshooting guidance. It combines lightweight pre-model checks with structured Gemini calls so the system can reject unsafe prompts quickly and still produce useful, machine-validated answers for safe requests.
 
 The project is designed as a learning-friendly prototype with production-minded ideas. It demonstrates how to put an LLM behind a security pipeline instead of exposing the model directly to user input.
 
@@ -32,7 +32,7 @@ AiGuard shows how to reduce that risk with simple application-side controls. It 
 - Fast first-layer protection with no model cost for obvious attacks
 - Structured JSON responses instead of free-form model output
 - Clear separation between security judgment and final answer generation
-- Easy to test locally with bundled prompt scenarios
+- Easy to test with bundled prompt scenarios
 - Useful audit trail in `logs/audit.log`
 - Small codebase that is easy to extend
 
@@ -93,7 +93,7 @@ This project is still a compact prototype, but its design points in a production
 - add policy-based allow and deny rules beyond regex matching
 - store audit events in a persistent logging backend
 - add automated tests with mocked Gemini responses
-- protect secrets with a proper secret manager instead of local `.env` files
+- protect secrets with a proper secret manager instead of relying on `.env` files in deployed environments
 - expose the guard as an API or service rather than only a demo CLI
 
 The main production lesson is that safe AI systems depend on application architecture, not only on model choice.
@@ -125,18 +125,12 @@ AiGuard teaches several important engineering ideas:
 
 ### 1. Clone and enter the project
 
-```powershell
-cd "c:\Users\siddh\Desktop\projects\AI\AiGuard"
+```bash
+git clone <repository-url>
+cd AiGuard
 ```
 
 ### 2. Create and activate a virtual environment
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-```
-
-If you are using Git Bash:
 
 ```bash
 python -m venv .venv
@@ -145,7 +139,7 @@ source .venv/Scripts/activate
 
 ### 3. Install dependencies
 
-```powershell
+```bash
 pip install -r requirements.txt
 ```
 
@@ -160,9 +154,7 @@ LOG_LEVEL=INFO
 
 ### 5. Run the demo suite
 
-From the project root:
-
-```powershell
+```bash
 python -m src.main
 ```
 
@@ -211,7 +203,7 @@ This helps you observe:
 - regex-only blocking
 - AI-judge-based blocking
 - successful runbook generation
-- latency differences for different prompt sizes
+- token usage differences across different prompt sizes
 
 To customize the tests, edit:
 
@@ -233,10 +225,12 @@ Shows:
 
 - input size in characters and words
 - execution path
-- regex layer time
-- judge layer time
-- runbook generation time
-- total time
+- model call count
+- regex layer outcome
+- judge token usage
+- runbook token usage
+- total token usage
+- a quota visibility note, because Gemini does not expose remaining quota in the response
 
 ### 3. Judge Assessment
 
