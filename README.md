@@ -4,6 +4,8 @@ AiGuard is a small but practical security-focused GenAI project that defends an 
 
 The project is designed as a learning-friendly prototype with production-minded ideas. It demonstrates how to put an LLM behind a security pipeline instead of exposing the model directly to user input.
 
+![Output Results](learning/output_1.png)
+
 ## Introduction
 
 Most AI assistants fail not because the underlying model is weak, but because the application accepts user prompts too trustingly. If an assistant is meant to help with infrastructure, support, or operations, a malicious prompt can try to reveal internal rules, bypass safeguards, or turn the model into a tool for harmful actions.
@@ -72,6 +74,10 @@ AiGuard/
 |-- README.md
 |-- learning/
 |   `-- README.md
+|   `-- sample_output.txt
+|   `-- output_1.png
+|   `-- output_2.png
+|   `-- output_3.png
 |-- logs/
 |   `-- audit.log
 `-- src/
@@ -214,6 +220,11 @@ src/test_prompts.py
 ## Output Explanation
 
 Each test case prints a clean CLI report with four main sections:
+
+![Prompt 1 output](learning/output_1.png)
+![Prompt 2 output](learning/output_2.png)
+![Prompt 3 output](learning/output_3.png)
+
 
 ### 1. Header
 
