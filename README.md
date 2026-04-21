@@ -126,8 +126,8 @@ AiGuard teaches several important engineering ideas:
 ### 1. Clone and enter the project
 
 ```bash
-git clone <repository-url>
-cd AiGuard
+git clone https://github.com/<your-username>/Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway.git
+cd Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway
 ```
 
 ### 2. Create and activate a virtual environment
