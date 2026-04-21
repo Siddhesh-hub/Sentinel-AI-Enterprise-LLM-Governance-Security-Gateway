@@ -1,6 +1,6 @@
-# AiGuard Learning Notes
+# Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway Learning Notes
 
-This folder captures the main concepts used in the AiGuard project. The goal is to make the code easier to understand for someone who is learning secure AI application design for the first time.
+This folder captures the main concepts used in the Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway project. The goal is to make the code easier to understand for someone who is learning secure AI application design for the first time.
 
 ## 1. Prompt Injection
 
@@ -20,7 +20,7 @@ Why it matters:
 
 ## 2. Layered Defense
 
-AiGuard does not trust a single protection method. It uses multiple layers:
+Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway does not trust a single protection method. It uses multiple layers:
 
 1. Regex filter
 2. AI judge
@@ -38,7 +38,7 @@ The idea is similar to defense in depth in security engineering.
 
 Regex is used for the fastest detection of obvious malicious phrases. This layer costs almost nothing and can stop common attacks before they ever reach the model.
 
-In AiGuard, the regex layer looks for patterns such as:
+In Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway, the regex layer looks for patterns such as:
 
 - ignoring instructions
 - revealing rules
@@ -70,7 +70,7 @@ This pattern is useful because it can catch subtle or indirect attacks that rege
 
 ## 5. Structured Output
 
-Instead of accepting free-form model text, AiGuard asks Gemini to return structured JSON. That JSON is validated against Pydantic schemas.
+Instead of accepting free-form model text, Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway asks Gemini to return structured JSON. That JSON is validated against Pydantic schemas.
 
 Benefits:
 
@@ -88,7 +88,7 @@ Two schemas are used:
 
 Pydantic helps convert model output into typed Python objects. This means the application can reject malformed responses instead of silently accepting bad data.
 
-In AiGuard, Pydantic is used to validate:
+In Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway, Pydantic is used to validate:
 
 - the judge result
 - the final CloudOps runbook
@@ -107,7 +107,7 @@ This keeps the final response practical and operational instead of purely conver
 
 ## 8. Audit Logging
 
-AiGuard logs blocked and allowed requests to `logs/audit.log`.
+Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway logs blocked and allowed requests to `logs/audit.log`.
 
 Why logging matters:
 
@@ -133,7 +133,7 @@ Good test prompts are part of the security design, not an afterthought.
 
 ## 10. Environment Configuration
 
-AiGuard uses `.env` with `python-dotenv` to load configuration like the Gemini API key.
+Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway uses `.env` with `python-dotenv` to load configuration like the Gemini API key.
 
 This keeps secrets out of the code and makes local setup simpler.
 
@@ -144,7 +144,7 @@ Important note:
 
 ## 11. Terminal UX
 
-AiGuard prints results in a structured CLI format instead of dumping raw objects. This improves readability and helps developers quickly understand:
+Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway prints results in a structured CLI format instead of dumping raw objects. This improves readability and helps developers quickly understand:
 
 - what prompt was tested
 - where it was blocked
@@ -155,7 +155,7 @@ Good developer experience matters even in security-focused tools.
 
 ## 12. Main Takeaway
 
-The biggest lesson from AiGuard is that safe AI systems come from application design, not just from choosing a smart model. Real protection usually needs:
+The biggest lesson from Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway is that safe AI systems come from application design, not just from choosing a smart model. Real protection usually needs:
 
 - multiple layers
 - validation
