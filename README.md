@@ -1,4 +1,4 @@
-# AiGuard
+# Sentinel-AI-Enterprise-LLM-Governance-Security-Gateway
 
 AiGuard is a small but practical security-focused GenAI project that defends an operational assistant from prompt injection attempts before allowing it to generate CloudOps troubleshooting guidance. It combines lightweight pre-model checks with structured Gemini calls so the system can reject unsafe prompts quickly and still produce useful, machine-validated answers for safe requests.
 
